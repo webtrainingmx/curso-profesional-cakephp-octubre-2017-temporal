@@ -2,9 +2,10 @@
     Mis posts
 </h1>
 
-<?= $this->Html->link('Agregar post', ['action', 'add']) ?>
+<?= $this->Html->link('Agregar post', ['action' => 'add'],
+    ['class'=>'btn btn-primary']) ?>
 
-<table>
+<table class="table table-hover table-bordered">
     <thead>
     <tr>
         <th>Título</th>
@@ -27,12 +28,12 @@
             <td>
                 <?= $this->Html->link('Editar', ['action' => 'edit', $post->slug]) ?>
                 <?=
-                    $this->Form->postLink('Eliminar',
-                        ['action' => 'delete', $post->slug],
-                        ['confirm' =>
-                            'Estás seguro de eliminar el post' . $post->title .'?'
-                        ]
-                    )
+                $this->Form->postLink('Eliminar',
+                    ['action' => 'delete', $post->slug],
+                    ['confirm' =>
+                        'Estás seguro de eliminar el post' . $post->title . '?'
+                    ]
+                )
                 ?>
             </td>
         </tr>
